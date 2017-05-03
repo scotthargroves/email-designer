@@ -1,24 +1,111 @@
-.App {
-  text-align: center;
+.main {
+  height: 700px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.col-one {
+  width: 300px;
+  height: 60px;
+  background: red;
+  float: left;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
+.browser-window .header {
+  width: 100%;
+  font-size: 11px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #fff;
+}
+
+.from {
+  width: 50px;
+  float: left;
+  border-bottom: 1px solid #e9e9e9;
+  font-size: 11px;
+  padding-left: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #e6e6e6;
+}
+
+.browser-window {
+  text-align: left;
+  width: 650px;
+  height: 500px;
+  display: inline-block;
+  border-radius: 5px;
+  background-color: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.09);
+  position: absolute;
+  right: -50px;
+}
+
+.browser-window .top-bar {
+  height: 30px;
+  border-radius: 5px 5px 0 0;
+  border-top: thin solid #eaeae9;
+  border-bottom: thin solid #dfdfde;
+  background: linear-gradient(#e7e7e6, #e2e2e1);
+}
+
+.browser-window .circle {
+  height: 8px;
+  width: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 5px;
+}
+
+.browser-window .circles {
+  margin: 5px 11px;
+}
+
+.browser-window .content {
+  margin: 0;
+  width: 100%;
+  display: inline-block;
+  border-radius: 0 0 5px 5px;
   padding: 20px;
-  color: white;
+  border-top: 1px solid #e6e6e6;
 }
 
-.App-intro {
-  font-size: large;
+.browser-window .dev-tools {
+  width: 100%;
+  min-height: 50%;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.browser-window .dev-tools .bar {
+  margin-top: -4px;
+  border-top: thin solid #e7e7e6;
+  border-bottom: thin solid #e7e7e6;
+  color: #e7e7e6;
+}
+.browser-window .dev-tools .bar .dev-bar-content {
+  padding: 10px;
+  float: left;
+}
+.browser-window .dev-tools .bar .close {
+  float: right;
+  border-left: thin solid #e7e7e6;
+  padding: 10px;
+}
+
+.browser-window .dev-tools .content .html {
+  height: 100%;
+  width: 69%;
+  border-right: thin solid #e7e7e6;
+}
+.browser-window .dev-tools .content .css {
+  float: right;
+  height: 100%;
+  width: 30%;
+}
+
+.clear {
+  clear: both;
 }
