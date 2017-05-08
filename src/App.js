@@ -1,32 +1,42 @@
 import React, { Component } from 'react';
+import {AddNewTask} from './addnewtask';
+import {ToDoAppList} from './todoapplist';
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super();
+    this.state = {tasks: props.tasks}; 
+    this.updateList = this.updateList.bind(this);
+    this.removeTask = this.removeTask.bind(this);
+  }
+  
+  updateList (text) {
+    var updatedTasks = this.state.tasks;
+    updatedTasks.unshift(text);
+    this.setState({tasks: updatedTasks});
+    this.updateLocalStorage(updatedTasks);
+  }
+  
+  removeTask(text) {
+    var updatedTasks = this.state.tasks;
+    updatedTasks.splice(updatedTasks.indexOf(text), 1);
+    this.setState({tasks: updatedTasks});
+    this.updateLocalStorage(updatedTasks);
+  }
+  
+  updateLocalStorage(updatedTasks) {
+    console.log("Tasks Updated");
+    localStorage.setItem('storedTasks', JSON.stringify(updatedTasks));
+  }
+  
   render() {
     return (
-      
-		  <div className='browser-window'>
-			  
-			  <div className='top-bar'>
-			    <div className='circles'>
-            <div className="circle circle-red"></div>
-            <div className="circle circle-yellow"></div>
-            <div className="circle circle-green"></div>
-	        </div>
-        </div>
-        
-        <div className='header'>To: Desk.com Support &rarr; <strong>support@desk.com</strong> </div>
-        
-        <div className='content'>
-          hello
-        </div>
-        
-        <div className='clear'></div>
-        
+      <div>
+        <h3>Todo App</h3>
+        <AddNewTask updateList={this.updateList}/>
+        <ToDoAppList tasks={this.state.tasks} remove={this.removeTask}/>
       </div>
-      
-      
-
     );
   }
 }

@@ -3,7 +3,15 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
 
+var tasksList = ["Task One", "Task Two", "Task 3"];
+
+var tasks = localStorage.getItem('storedTasks');
+
+if(tasks) {
+  tasksList = JSON.parse(tasks);
+}
+
 ReactDOM.render(
-  <App />,
+  <App tasks={tasksList} />,
   document.getElementById('root')
 );
